@@ -18,7 +18,8 @@ import rservice.model.PlayerList;
 @Consumes("application/json")
 @Produces("application/json")
 public class PlayerService {
-    
+
+    //Lookup EJB session bean    
     @EJB
     SessionBeanLocal SeesionBean;
     
@@ -26,6 +27,10 @@ public class PlayerService {
         super();
     }
 
+    /**
+     * Queries all players accessible from the EJB facade
+     * @return ListOfPlayers class that wraps a List of Players objects
+     */
     @GET
     public PlayerList getAll() {
         PlayerList listOfPlayers = new PlayerList();
